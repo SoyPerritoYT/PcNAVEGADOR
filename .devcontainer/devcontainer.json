@@ -1,0 +1,20 @@
+{
+  "name": "PC Navegador - Linux XFCE",
+  "image": "lscr.io/linuxserver/webtop:ubuntu-xfce",
+  "overrideCommand": false,
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Escritorio Linux (noVNC)",
+      "onAutoForward": "openBrowser",
+      "visibility": "private"
+    }
+  },
+  "containerEnv": {
+    "PUID": "1000",
+    "PGID": "1000",
+    "TZ": "Europe/Madrid",
+    "TITLE": "PC Navegador"
+  },
+  "shutdownAction": "stopContainer"
+}
