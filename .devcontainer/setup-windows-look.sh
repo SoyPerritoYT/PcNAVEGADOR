@@ -19,6 +19,17 @@ else
 fi
 
 echo "Instalando iconos, fuentes y dock..."
+echo "Instalando Firefox desde el repositorio oficial de Mozilla..."
+$SUDO apt-get install -y wget gpg
+$SUDO install -d -m 0755 /etc/apt/keyrings
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | $SUDO tee /etc/apt/keyrings/packages.mozilla.org.asc >/dev/null
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | $SUDO tee /etc/apt/sources.list.d/mozilla.list >/dev/null
+echo 'Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000' | $SUDO tee /etc/apt/preferences.d/mozilla >/dev/null
+$SUDO apt-get update
+$SUDO apt-get install -y firefox
+
 $SUDO apt-get update
 $SUDO apt-get install -y papirus-icon-theme plank fonts-inter
 
@@ -67,4 +78,17 @@ Terminal=false
 Categories=Network;AudioVideo;
 YOUTUBE
 chmod +x "$DESKTOP_DIR/YouTube.desktop"
+
+cat > "$DESKTOP_DIR/Firefox.desktop" <<'FIREFOX'
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Firefox
+Comment=Open Firefox web browser
+Exec=firefox %u
+Icon=firefox
+Terminal=false
+Categories=Network;WebBrowser;
+FIREFOX
+chmod +x "$DESKTOP_DIR/Firefox.desktop"
 
