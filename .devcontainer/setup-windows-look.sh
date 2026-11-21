@@ -51,3 +51,20 @@ DESKTOP
 echo
 echo "Listo. Cierra sesión/reinicia el escritorio o reinicia el Codespace para ver los cambios."
 echo "El dock Plank se iniciará automáticamente."
+
+# Add a YouTube shortcut to the XFCE desktop.
+DESKTOP_DIR="$HOME/Desktop"
+mkdir -p "$DESKTOP_DIR"
+cat > "$DESKTOP_DIR/YouTube.desktop" <<'YOUTUBE'
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=YouTube
+Comment=Open YouTube in the web browser
+Exec=xdg-open https://www.youtube.com
+Icon=web-browser
+Terminal=false
+Categories=Network;AudioVideo;
+YOUTUBE
+chmod +x "$DESKTOP_DIR/YouTube.desktop"
+
