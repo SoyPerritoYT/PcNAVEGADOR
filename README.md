@@ -14,6 +14,26 @@ Un escritorio Linux real (Ubuntu + XFCE) dentro del navegador, usando LinuxServe
 
 El puerto está configurado como **Private**. Mantén esa configuración: no lo cambies a Public.
 
+## Apariencia estilo Windows
+
+Hay un instalador opcional que añade iconos Papirus, fuente Inter y un dock de aplicaciones Plank para dar al escritorio XFCE un aspecto más moderno inspirado en Windows.
+
+Desde una terminal dentro del escritorio Webtop, ejecuta:
+
+```bash
+bash .devcontainer/setup-windows-look.sh
+```
+
+Cuando termine, reinicia el escritorio/Codespace para que aparezcan todos los cambios. Es una apariencia inspirada en Windows, no una copia exacta de Windows 11.
+
+## Juegos
+
+- **Roblox:** no tiene soporte oficial para Linux; los métodos comunitarios pueden dejar de funcionar y no están garantizados en Codespaces.
+- **Minecraft Bedrock (móvil/consola/Windows):** no tiene una versión oficial para Linux. Esta configuración no lo convierte en Minecraft Bedrock.
+- **Minecraft Java:** puede funcionar en Linux, pero el rendimiento gráfico de Codespaces puede ser insuficiente.
+
+Este Codespace está pensado para un escritorio remoto y tareas ligeras, no para jugar.
+
 ## Qué incluye
 
 - Escritorio gráfico XFCE.
