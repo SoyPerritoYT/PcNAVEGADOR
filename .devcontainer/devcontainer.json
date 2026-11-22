@@ -14,7 +14,9 @@
     "PUID": "1000",
     "PGID": "1000",
     "TZ": "Europe/Madrid",
-    "TITLE": "PC Navegador"
+    "TITLE": "PC Navegador",
+    "LANG": "es_ES.UTF-8",
+    "LANGUAGE": "es_ES:es"
   },
   "shutdownAction": "stopContainer"
 }
